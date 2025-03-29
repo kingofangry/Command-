@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unlock Minecraft Commands</title>
+    <style>
+        #commandBox {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:disabled {
+            background-color: #ccc;
+        }
+        #adSpace {
+            width: 300px;
+            height: 250px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            text-align: center;
+            line-height: 250px;
+            color: #777;
+        }
+        #notice {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Unlock Minecraft Commands</h2>
+
+<div id="adSpace">
+    Ad Will Show Here
+</div>
+
+<p>Click the button below and wait for 10 seconds to get the commands.</p>
+
+<button id="unlockBtn" onclick="startTimer()">Click Ad to Unlock Commands</button>
+
+<p id="notice">Note: You need to click the ad to unlock the commands.</p>
+
+<div id="commandBox">
+    <h3>Your Commands:</h3>
+    <p>1. pkg update && pkg upgrade</p>
+    <p>2. pkg install nodejs-lts</p>
+    <p>3. node -v</p>
+    <p>4. npm -v</p>
+    <p>5. npm install mineflayer</p>
+</div>
+
+<script>
+    function startTimer() {
+        var btn = document.getElementById("unlockBtn");
+        var notice = document.getElementById("notice");
+        btn.disabled = true;
+        btn.innerHTML = "Please wait 10 seconds...";
+
+        setTimeout(function () {
+            notice.innerHTML = "Verifying... Please wait...";
+        }, 3000);
+
+        setTimeout(function () {
+            document.getElementById("commandBox").style.display = "block";
+            btn.innerHTML = "Commands Unlocked!";
+            notice.style.display = "none";
+        }, 10000);
+    }
+</script>
+
+</body>
+</html>
